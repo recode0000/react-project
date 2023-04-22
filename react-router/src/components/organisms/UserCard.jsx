@@ -35,6 +35,6 @@ const SDl = styled.dl`
     display: inline-block;
     padding-left: 32px;
     margin-left: 0 !important;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word;t
   }
 `;
