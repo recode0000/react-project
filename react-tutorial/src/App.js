@@ -27,9 +27,9 @@ const Board = () => {
         <Square value={squares[5]}/>
       </div>
       <div className="board-row">
-        <Square value={squares[6]/>
-        <Square value={squares[7]/>
-        <Square value={squares[8]/>
+        <Square value={squares[6]} />
+        <Square value={squares[7]} />
+        <Square value={squares[8]} />
       </div>
     </>
   );
