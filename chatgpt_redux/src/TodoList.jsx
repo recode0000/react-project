@@ -32,7 +32,7 @@ const TodoList = () => {
           <li key={task.id}>
             <input type="checkbox" checked={task.completed} onChange={() => handleToggleTask(task.id)} />
             <span style={{ textDecoration: task.completed ? 'line-through': 'none'}}>{task.name}</span>
-            <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+            <button onClick={() => handleDeleteTask(task.id)}>Delete TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST</button>
           </li>
         ))}
       </ul>
