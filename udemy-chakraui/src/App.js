@@ -1,4 +1,4 @@
-import { Button, ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider,Button } from "@chakra-ui/react"
 import theme from "./themes/theme";
 
 function App() {
