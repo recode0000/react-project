@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { TestList } from "./TestList";
+import "./App.css";
 
 function App() {
+  const [testList, setTestList] = useState(TestList);
+  const onDragEndTest = (result) => {
+    const items = [...testList];
+    const deleteItem = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, deleteItem[0]);
+
+    setTestList(items);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>ドラッグアンドドロップ</h1>
+      <DragDropContext onDragEnd={onDragEndTest}>
+        <Droppable droppableId="droppableId">
+          {(provided) => (
+            <div
+              className="testListArea"
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {testList.map(({ id, name }, index) => {
+                return (
+                  <Draggable key={id} draggableId={id} index={index}>
+                    {(provided) => (
+                      <div
+                        className="testItem"
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      >
+                        <div>
+                          {id}：{name}
+                        </div>
+                      </div>
+                    )}
+                  </Draggable>
+                );
+              })}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
     </div>
   );
 }
-
 export default App;
