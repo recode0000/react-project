@@ -1,10 +1,19 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import { createContext } from 'react';
+
+const codeInfo = {
+  name: "codeInfo",
+  age: 25,
+};
+
+const codeInfoContext = createContext(codeInfo);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  <codeInfoContext.Provider value={codeInfo}>
     <App />
-  </React.StrictMode>,
+  </codeInfoContext.Provider>
 )
+
+export default codeInfoContext;
