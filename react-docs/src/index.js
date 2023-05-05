@@ -13,7 +13,5 @@ import App from "./App";
 //仮想DOMを作成して
 const root = createRoot(document.getElementById("root"));
 root.render(
-  <StrictMode>
     <App />
-  </StrictMode>
 );
