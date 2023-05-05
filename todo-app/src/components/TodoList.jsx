@@ -32,6 +32,7 @@ const TodoList = ({ todos, setTodos }) => {
               onChange={() => handleUpdateTask(index)}
             />
             {todo.task}
+
             <span
               onClick={() => handleRemoveTask(index)}
               style={{ cursor: "pointer" }}
