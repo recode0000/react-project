@@ -1,17 +1,13 @@
-// import './App.css';
+import { useReducer } from 'react';
+import './App.css';
+import { Counter } from './components/counter';
 
-// function App() {
-//   return (
-//     <div className="App">
-//     </div>
-//   );
-// }
+function App() {
+  return (
+    <div className="App">
+    <Counter/>
+    </div>
+  );
+}
 
-// export default App;
-
-
-// /React はマークアップとロジックを両方含む疎結合の「コンポーネント」という単位を用いて関心を分離します。
-//
-
-//Reactの要素はイミュータブル
-//Reactの要素はイミュータブル
+export default App;
