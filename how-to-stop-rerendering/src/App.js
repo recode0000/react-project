@@ -33,12 +33,23 @@ function App() {
     setTodo('')
   }
 
+  const completedTodo = index => {
+    console.log(index)
+    let newTodos = todos.map((todo, todoIndex) => {
+      if(todoIndex === index) {
+        todo.isCompleted = !todo.isCompleted;
+      }
+      return todo;
+    })
+    setTodos(newTodos);
+  }
+
   return (
     <div style={{margin: "2em"}}>
       <form onSubmit={ addTodo }>
         <input type="text" onChange={inputTodo} value={todo} />
       </form>
-      <Todo todos={todos} />
+      <Todo todos={todos} completedTodo={completedTodo} />
     </div>
   );
 }
