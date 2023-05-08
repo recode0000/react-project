@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import './App.css';
 import Todo from "./components/Todo"
 
@@ -33,8 +33,7 @@ function App() {
     setTodo('')
   }
 
-  const completedTodo = index => {
-    console.log(index)
+  const completedTodo = useCallback(index => {
     let newTodos = todos.map((todo, todoIndex) => {
       if(todoIndex === index) {
         todo.isCompleted = !todo.isCompleted;
@@ -42,7 +41,7 @@ function App() {
       return todo;
     })
     setTodos(newTodos);
-  }
+  }, [todos]);
 
   return (
     <div style={{margin: "2em"}}>
