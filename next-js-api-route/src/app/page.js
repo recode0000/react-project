@@ -1,6 +1,7 @@
 "use client";
 
 import {useState,useEffect} from 'react'
+import Link from 'next/link';
 
 export default function Home() {
   const [users, setUsers] = useState([])
@@ -20,6 +21,8 @@ export default function Home() {
           <li key={user.id}>{user.name}</li>
         ))}
       </ul>
+
+      <Link href="/about">Aboutページ</Link>
     </div>
   )
 }
