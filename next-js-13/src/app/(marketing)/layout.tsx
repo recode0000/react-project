@@ -5,3 +5,4 @@ export default function MarketingLayout({
 }) {
   return <div className="m-4 font-bold bg-gray-500">{children}</div>;
 }
+
